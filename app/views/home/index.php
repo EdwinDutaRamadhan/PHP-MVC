@@ -2,7 +2,7 @@
     <div class="py-5 mt-4 mb-4 bg-light">
         <div class="container">
             <h1>Selamat Datang di website saya</h1>
-            <p class="lead">In today's world internet is the most popular way of connecting with the people. At <a href="https://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
+            <p class="lead">Halo, nama saya <?= $data['nama']; ?> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
             <p><a href="" target="_blank" class="btn btn-primary btn-lg">Start learning today</a></p>
         </div>
     </div>
