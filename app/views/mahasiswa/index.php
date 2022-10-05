@@ -17,8 +17,12 @@
     <?php foreach($data['mhs'] as $mhs): ?>
         <li class="list-group-item ">
             <?= $mhs['nama']; ?>
-            <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge bg-danger float-end ms-1" onclick="return confirm('yakin ingin menghapus');">hapus</a>
-            <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge bg-primary float-end ms-1">detail</a>
+            <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" 
+            class="badge bg-danger float-end ms-1" onclick="return confirm('yakin ingin menghapus');">hapus</a>
+            <a href="<?= BASEURL; ?>/mahasiswa/update/<?= $mhs['id']; ?>" 
+            class="badge bg-success float-end ms-1 tampilModalUpdate" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">update</a>
+            <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" 
+            class="badge bg-primary float-end ms-1">detail</a>
         </li>
     <?php endforeach; ?>
     </ul>
@@ -29,12 +33,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="judulModal">Tambah Data Mahasiswa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="judulModalLabel">Tambah Data Mahasiswa</h5>
+        <button type="button" class="btn-close buttonTambahData" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         
         <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
+        <input type="hidden" name="id" id="id">
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
@@ -61,7 +66,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Tambah Data</button>
+        <button type="submit" class="btn btn-primary" id="buttonModalLabel">Tambah Data</button>
          </form>
       </div>
     </div>
